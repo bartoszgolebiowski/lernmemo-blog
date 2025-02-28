@@ -3,6 +3,7 @@ const path = require('path');
 const { marked } = require('marked');
 const ejs = require('ejs');
 const blogConfig = require('./config');
+const { createSitemap } = require('./generateSitemap');
 
 // Configuration
 const BASE_URL = 'https://blog.lernmemo.com' 
@@ -10,30 +11,39 @@ const BASE_URL = 'https://blog.lernmemo.com'
 const OUTPUT_DIR = path.join(__dirname, 'dist');
 
 async function build() {
-  console.log('Starting build process...');
+  try {
+    console.log('Starting build process...');
 
-  // Create dist directory
-  await fs.ensureDir(OUTPUT_DIR);
-  
-  // Copy static assets
-  await fs.copy(path.join(__dirname, 'public'), OUTPUT_DIR);
-  console.log('Static assets copied.');
+    // Create dist directory
+    await fs.ensureDir(OUTPUT_DIR);
+    
+    // Copy static assets
+    await fs.copy(path.join(__dirname, 'public'), OUTPUT_DIR);
+    console.log('Static assets copied.');
 
-  // Load metatags and articles
-  const metatags = JSON.parse(await fs.readFile(path.join(__dirname, 'config', 'metatags.json'), 'utf-8'));
-  const articles = JSON.parse(await fs.readFile(path.join(__dirname, 'articles', 'articles.json'), 'utf-8'));
-  
-  // Create article pages
-  for (const article of articles) {
-    await generateArticlePage(article.id, articles, metatags);
+    // Load metatags and articles
+    const metatags = JSON.parse(await fs.readFile(path.join(__dirname, 'config', 'metatags.json'), 'utf-8'));
+    const articles = JSON.parse(await fs.readFile(path.join(__dirname, 'articles', 'articles.json'), 'utf-8'));
+    
+    // Create article pages
+    for (const article of articles) {
+      await generateArticlePage(article.id, articles, metatags);
+    }
+
+    // Create index page that redirects to the first article
+    if (articles.length > 0) {
+      await generateIndexPage(articles, metatags);
+    }
+
+    // Generate sitemap as part of the build process
+    console.log('Generating sitemap...');
+    await createSitemap(articles);
+
+    console.log('Build completed successfully!');
+  } catch (error) {
+    console.error('Build failed:', error);
+    process.exit(1);
   }
-
-  // Create index page that redirects to the first article
-  if (articles.length > 0) {
-    await generateIndexPage(articles, metatags);
-  }
-
-  console.log('Build completed successfully!');
 }
 
 async function generateArticlePage(articleId, allArticles, metatags) {
