@@ -1,0 +1,53 @@
+:root {
+    /* Colors */
+    --color-primary: #2c3e50;
+    --color-primary-dark: #1a2a3a;
+    --color-secondary: #3498db;
+    --color-secondary-dark: #2980b9;
+    --color-accent: #ffc93c;
+    --color-accent-dark: #ffc93c;
+    --color-background: #ecf0f1;
+    --color-background-alt: #f9f9f9;
+    --color-text: #34495e;
+    --color-text-light: #7f8c8d;
+    --color-heading: #444;
+    --color-white: #ffffff;
+    --color-success: #2ecc71;
+    --color-error: #e74c3c;
+
+    /* Spacing */
+    --space-xs: 4px;
+    --space-sm: 8px;
+    --space-md: 12px;
+    --space-lg: 16px;
+    --space-xl: 20px;
+    --space-xxl: 24px;
+    --space-section: 50px;
+    --space-section-lg: 100px;
+
+    /* Border */
+    --border-radius-sm: 4px;
+    --border-radius-md: 5px;
+    --border-radius-lg: 8px;
+    --border-radius-xl: 10px;
+    --border-radius-full: 30px;
+    --border-radius-circle: 50%;
+    --border-width: 2px;
+
+    /* Shadows */
+    --shadow-sm: 0 2px 5px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 4px 12px rgba(0, 0, 0, 0.05);
+    --shadow-xl: 0 6px 12px rgba(0, 0, 0, 0.1);
+    --shadow-xxl: 0 8px 20px rgba(0, 0, 0, 0.15);
+    --shadow-focus: 0 0 0 3px rgba(26, 188, 156, 0.2);
+
+    /* Typography */
+    --font-size-sm: 0.9rem;
+    --font-size-base: 1rem;
+    --font-size-md: 1.2rem;
+    --font-size-lg: 1.5rem;
+    --font-size-xl: 2rem;
+    --font-size-xxl: 2.2rem;
+    --font-size-huge: 2.5rem;
+}
