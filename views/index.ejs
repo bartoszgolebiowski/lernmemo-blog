@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('partials/meta', { metaTags, baseUrl }) %>
+    <link rel="stylesheet" href="/css/theme.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="/logo/lernmemo-logo.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/logo/logo-apple.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- New Urgency Banner -->
+    <div class="urgency-banner">
+      🔥 Limited Beta Access: Only 100 spots available! Sign up before the
+      deadline. 🔥
+    </div>
+
+    <!-- Hero Section -->
+
+    <header>
+      <h1 id="blog-title"><%= blogTitle %></h1>
+      <div class="container">
+        <p>
+          Take a photo of your notes and instantly create learning materials.
+        </p>
+        <span class="limited-spots"
+          >Private beta starting soon - Limited to 100 early adopters!</span
+        >
+        <a href="#waitlist" class="btn btn-urgent">Secure Your Spot Now</a>
+
+        <!-- Adding spots remaining indicator -->
+        <div class="spots-indicator">
+          Only <span id="spots-left">76</span> spots remaining!
+        </div>
+      </div>
+    </header>
+    <section class="container">
+      <div>
+        <nav id="nav-menu"></nav>
+      </div>
+      <main>
+        <div id="article-list">
+          <% articles.forEach(function(article) { %>
+          <div class="article-item">
+            <a
+              href="/article/<%= article.id %>"
+              class="<%= activeArticle === article.id ? 'active' : '' %>"
+            >
+              <%= article.title %>
+            </a>
+            <span class="article-date">
+              <%= new Date(article.date).toLocaleDateString() %>
+            </span>
+          </div>
+          <% }); %>
+        </div>
+        <div id="article-content">
+          <%- articleContent %>
+
+          <div class="article-cta">
+            <h3>Ready to transform your learning experience?</h3>
+            <p>
+              Take a photo of your notes and instantly create personalized
+              flashcards, quizzes, and more with our AI-powered learning tool.
+            </p>
+
+            <div class="card form-card">
+              <form
+                action="https://gmail.us22.list-manage.com/subscribe/post?u=eb5600dfff312799ed5249ed3&amp;id=2d25ef2404&amp;f_id=00cac2e1f0"
+                method="post"
+                id="mc-embedded-subscribe-form"
+                name="mc-embedded-subscribe-form"
+                target="_blank"
+              >
+                <div class="form-group">
+                  <label for="mce-EMAIL" class="form-label"
+                    >Email Address
+                    <span class="required" aria-required="true" role="alert">
+                      *</span
+                    ></label
+                  >
+                  <input
+                    type="email"
+                    name="EMAIL"
+                    class="form-input"
+                    id="mce-EMAIL"
+                    required=""
+                    value=""
+                    placeholder="your@email.com"
+                  />
+                </div>
+                <div id="mce-responses">
+                  <div
+                    class="response"
+                    id="mce-error-response"
+                    style="display: none"
+                  ></div>
+                  <div
+                    class="response"
+                    id="mce-success-response"
+                    style="display: none"
+                  ></div>
+                </div>
+                <div
+                  aria-hidden="true"
+                  style="position: absolute; left: -5000px"
+                >
+                  <input
+                    type="text"
+                    name="b_eb5600dfff312799ed5249ed3_2d25ef2404"
+                    tabindex="-1"
+                    value=""
+                  />
+                </div>
+                <div class="form-submit">
+                  <button
+                    type="submit"
+                    class="btn btn-accent btn-urgent"
+                    id="mc-embedded-subscribe"
+                  >
+                    Reserve My Spot Now - Don't Miss Out!
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </main>
+    </section>
+
+    <!-- Waitlist Section -->
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <p>&copy; 2025 Language Learning Tool. All rights reserved.</p>
+        <button id="cookie-preferences" class="cookie-prefs-btn">
+          Cookie Preferences
+        </button>
+      </div>
+    </footer>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookieConsent" class="cookie-consent">
+      <div class="cookie-text">
+        <h3>We Value Your Privacy</h3>
+        <p>
+          We use cookies to enhance your browsing experience, serve personalized
+          content, and analyze our traffic. By clicking "Accept All", you
+          consent to our use of cookies.
+        </p>
+        <span class="cookie-settings-toggle" id="showCookieSettings"
+          >Customize Settings</span
+        >
+
+        <div id="cookieSettings" class="cookie-settings">
+          <div class="cookie-settings-option">
+            <div>
+              <strong>Essential Cookies</strong>
+              <p>
+                Necessary for the website to function properly. Cannot be
+                disabled.
+              </p>
+            </div>
+            <input type="checkbox" checked disabled />
+          </div>
+          <div class="cookie-settings-option">
+            <div>
+              <strong>Analytics Cookies</strong>
+              <p>Help us understand how visitors interact with our website.</p>
+            </div>
+            <input type="checkbox" id="analyticsConsent" checked />
+          </div>
+        </div>
+      </div>
+      <div class="cookie-buttons">
+        <button id="declineCookies" class="cookie-btn cookie-btn-decline">
+          Decline All
+        </button>
+        <button id="acceptCookies" class="cookie-btn cookie-btn-accept">
+          Accept All
+        </button>
+      </div>
+    </div>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "Language Learning Tool",
+        "description": "AI-powered language learning tool that converts photos and transcripts into flashcards.",
+        "brand": {
+          "@type": "Brand",
+          "name": "Language Learning Tool"
+        }
+      }
+    </script>
+    <!-- Google tag (gtag.js) - Modified to respect consent -->
+    <script>
+      // Set default consent to denied
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+
+      // Initialize Google's consent mode with default denied state
+      gtag("consent", "default", {
+        ad_storage: "denied",
+        analytics_storage: "denied",
+        functionality_storage: "denied",
+        personalization_storage: "denied",
+        security_storage: "granted", // Always needed for security purposes
+      });
+
+      // Define the gtag function early for later use
+      gtag("js", new Date());
+      gtag("config", "G-FK0FJPSGDR", {
+        anonymize_ip: true, // IP anonymization for GDPR
+      });
+    </script>
+    <script src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
+    <script>
+      (function ($) {
+        window.fnames = new Array();
+        window.ftypes = new Array();
+        fnames[0] = "EMAIL";
+        ftypes[0] = "email";
+        fnames[1] = "FNAME";
+        ftypes[1] = "text";
+        fnames[2] = "LNAME";
+        ftypes[2] = "text";
+        fnames[3] = "ADDRESS";
+        ftypes[3] = "address";
+        fnames[4] = "PHONE";
+        ftypes[4] = "phone";
+        fnames[5] = "BIRTHDAY";
+        ftypes[5] = "birthday";
+        fnames[6] = "COMPANY";
+        ftypes[6] = "text";
+      })(jQuery);
+      var $mcj = jQuery.noConflict(true);
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const waitlistButtons = document.querySelectorAll(
+          'a[href="#waitlist"]'
+        );
+
+        waitlistButtons.forEach((waitlistButton) => {
+          waitlistButton.addEventListener("click", function (e) {
+            // Allow default behavior (scrolling to the section)
+            // Then set a small timeout to ensure scrolling completes
+            setTimeout(function () {
+              const emailInput = document.getElementById("mce-EMAIL");
+              if (emailInput) {
+                emailInput.focus();
+              }
+            }, 500); // 500ms delay to ensure scrolling completes
+          });
+        });
+      });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const cookieConsent = document.getElementById("cookieConsent");
+        const acceptBtn = document.getElementById("acceptCookies");
+        const declineBtn = document.getElementById("declineCookies");
+        const showSettingsBtn = document.getElementById("showCookieSettings");
+        const cookieSettings = document.getElementById("cookieSettings");
+        const analyticsConsent = document.getElementById("analyticsConsent");
+        const cookiePrefBtn = document.getElementById("cookie-preferences");
+
+        // Function to get cookie by name
+        function getCookie(name) {
+          const match = document.cookie.match(
+            new RegExp("(^| )" + name + "=([^;]+)")
+          );
+          if (match) return match[2];
+          return null;
+        }
+
+        // Function to set cookie with expiry days
+        function setCookie(name, value, days) {
+          let expires = "";
+          if (days) {
+            const date = new Date();
+            date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+            expires = "; expires=" + date.toUTCString();
+          }
+          document.cookie =
+            name + "=" + value + expires + "; path=/; SameSite=Lax";
+        }
+
+        // Basic region detection (can be replaced with more accurate method)
+        function isInEU() {
+          // This is a simple time zone check - not perfect but a starting point
+          // A more accurate solution would use IP-based geolocation
+          const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+          const euTimezones = [
+            "Europe/Vienna",
+            "Europe/Brussels",
+            "Europe/Sofia",
+            "Europe/Zagreb",
+            "Europe/Nicosia",
+            "Europe/Prague",
+            "Europe/Copenhagen",
+            "Europe/Tallinn",
+            "Europe/Helsinki",
+            "Europe/Paris",
+            "Europe/Berlin",
+            "Europe/Athens",
+            "Europe/Budapest",
+            "Europe/Dublin",
+            "Europe/Rome",
+            "Europe/Riga",
+            "Europe/Vilnius",
+            "Europe/Luxembourg",
+            "Europe/Malta",
+            "Europe/Amsterdam",
+            "Europe/Warsaw",
+            "Europe/Lisbon",
+            "Europe/Bucharest",
+            "Europe/Bratislava",
+            "Europe/Madrid",
+            "Europe/Stockholm",
+            "Europe/London",
+          ];
+          return euTimezones.includes(timezone);
+        }
+
+        // Function to load Google Analytics script
+        function loadAnalytics() {
+          // Only create the script if it doesn't already exist
+          if (!document.querySelector('script[src*="googletagmanager"]')) {
+            const gaScript = document.createElement("script");
+            gaScript.async = true;
+            gaScript.src =
+              "https://www.googletagmanager.com/gtag/js?id=G-FK0FJPSGDR";
+            document.head.appendChild(gaScript);
+          }
+
+          // Update consent status to granted for analytics
+          gtag("consent", "update", {
+            analytics_storage: "granted",
+          });
+        }
+
+        // Handle user's saved preferences
+        function applyStoredPreferences() {
+          const consentStatus = getCookie("cookieConsent");
+          const analyticsStatus = getCookie("analyticsConsent");
+
+          if (consentStatus === "true") {
+            // User previously accepted all cookies
+            if (analyticsStatus === "true") {
+              loadAnalytics();
+            }
+          } else if (consentStatus === null) {
+            // First visit - show the banner
+            setTimeout(() => {
+              cookieConsent.classList.add("active");
+            }, 1000);
+          }
+          // If consentStatus is "false", keep everything denied (default state)
+        }
+
+        // Accept all cookies
+        acceptBtn.addEventListener("click", function () {
+          setCookie("cookieConsent", "true", 365);
+          setCookie("analyticsConsent", "true", 365);
+          cookieConsent.classList.remove("active");
+
+          // Update Google consent mode
+          gtag("consent", "update", {
+            ad_storage: "granted",
+            analytics_storage: "granted",
+            functionality_storage: "granted",
+            personalization_storage: "granted",
+            security_storage: "granted",
+          });
+
+          loadAnalytics();
+        });
+
+        // Decline all cookies
+        declineBtn.addEventListener("click", function () {
+          setCookie("cookieConsent", "false", 365);
+          setCookie("analyticsConsent", "false", 365);
+          cookieConsent.classList.remove("active");
+
+          // Keep Google consent mode as denied (default)
+          gtag("consent", "update", {
+            ad_storage: "denied",
+            analytics_storage: "denied",
+            functionality_storage: "denied",
+            personalization_storage: "denied",
+            security_storage: "granted", // Always needed for security
+          });
+        });
+
+        // Toggle cookie settings section
+        showSettingsBtn.addEventListener("click", function () {
+          cookieSettings.classList.toggle("active");
+        });
+
+        // Save custom settings when analytics checkbox changes
+        analyticsConsent.addEventListener("change", function () {
+          setCookie("analyticsConsent", this.checked.toString(), 365);
+
+          if (this.checked) {
+            gtag("consent", "update", {
+              analytics_storage: "granted",
+            });
+            loadAnalytics();
+          } else {
+            gtag("consent", "update", {
+              analytics_storage: "denied",
+            });
+          }
+        });
+
+        // Open cookie preferences from footer button
+        cookiePrefBtn.addEventListener("click", function () {
+          cookieConsent.classList.add("active");
+          cookieSettings.classList.add("active");
+
+          // Update checkbox based on current setting
+          const analyticsStatus = getCookie("analyticsConsent");
+          if (analyticsStatus !== null) {
+            analyticsConsent.checked = analyticsStatus === "true";
+          }
+        });
+
+        // Apply different default behavior based on region (stricter for EU)
+        if (isInEU()) {
+          // EU users get stricter defaults - explicit opt-in required
+          analyticsConsent.checked = false;
+        } else {
+          // Non-EU users could get more permissive defaults
+          // Still requiring consent but with analytics pre-selected
+          analyticsConsent.checked = true;
+        }
+
+        // Run on page load
+        applyStoredPreferences();
+      });
+    </script>
+  </body>
+</html>

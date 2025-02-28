@@ -1,0 +1,22 @@
+{
+  "default": {
+    "title": "LernMemo Blog - AI-Powered Language Learning Tools",
+    "description": "Learn languages efficiently with AI-powered tools and techniques. Discover language learning tips, AI tools, and productivity hacks.",
+    "keywords": "language learning, AI, education, flashcards, productivity",
+    "ogImage": "/logo/lernmemo-og-default.jpg",
+    "twitterCard": "summary_large_image",
+    "canonicalUrl": "https://lernmemo.com/blog",
+    "ogType": "website"
+  },
+  "articles": {
+    "effective-homework-completion-using-ai": {
+      "title": "Effective Homework Completion Using AI | LernMemo Blog",
+      "description": "Learn how to use AI tools to complete language learning homework more efficiently and effectively. Boost your productivity with smart learning techniques.",
+      "keywords": "ai, language learning, homework, education tech, productivity, flashcards",
+      "ogImage": "/logo/lernmemo-og.png",
+      "twitterCard": "summary_large_image",
+      "canonicalUrl": "https://lernmemo.com/blog/article/effective-homework-completion-using-ai",
+      "ogType": "article"
+    }
+  }
+}

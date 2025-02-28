@@ -1,0 +1,30 @@
+<!-- Basic Meta Tags -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title><%= metaTags.title %></title>
+<meta name="description" content="<%= metaTags.description %>">
+<% if (metaTags.keywords) { %>
+<meta name="keywords" content="<%= metaTags.keywords %>">
+<% } %>
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="<%= metaTags.ogType || 'website' %>">
+<meta property="og:url" content="<%= metaTags.canonicalUrl %>">
+<meta property="og:title" content="<%= metaTags.title %>">
+<meta property="og:description" content="<%= metaTags.description %>">
+<% if (metaTags.ogImage) { %>
+<meta property="og:image" content="<%= baseUrl %><%= metaTags.ogImage %>">
+<% } %>
+
+<!-- Twitter -->
+<meta property="twitter:card" content="<%= metaTags.twitterCard || 'summary_large_image' %>">
+<meta property="twitter:url" content="<%= metaTags.canonicalUrl %>">
+<meta property="twitter:title" content="<%= metaTags.title %>">
+<meta property="twitter:description" content="<%= metaTags.description %>">
+<% if (metaTags.ogImage) { %>
+<meta property="twitter:image" content="<%= baseUrl %><%= metaTags.ogImage %>">
+<% } %>
+
+<!-- Canonical Link -->
+<link rel="canonical" href="<%= metaTags.canonicalUrl %>">
+
