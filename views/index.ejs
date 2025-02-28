@@ -27,7 +27,7 @@
     <!-- Hero Section -->
 
     <header>
-      <h1 id="blog-title"><%= blogTitle %></h1>
+      <h1 id="blog-title">Lernmemo Blog</h1>
       <div class="container">
         <p>
           Take a photo of your notes and instantly create learning materials.
@@ -64,6 +64,7 @@
           <% }); %>
         </div>
         <div id="article-content">
+          <h2><%= blogTitle %></h2>
           <%- articleContent %>
 
           <div class="article-cta">
@@ -222,7 +223,7 @@
 
       // Define the gtag function early for later use
       gtag("js", new Date());
-      gtag("config", "G-FK0FJPSGDR", {
+      gtag("config", "G-7KQ6E9WBK9", {
         anonymize_ip: true, // IP anonymization for GDPR
       });
     </script>
@@ -342,7 +343,7 @@
             const gaScript = document.createElement("script");
             gaScript.async = true;
             gaScript.src =
-              "https://www.googletagmanager.com/gtag/js?id=G-FK0FJPSGDR";
+              "https://www.googletagmanager.com/gtag/js?id=G-7KQ6E9WBK9";
             document.head.appendChild(gaScript);
           }
 
