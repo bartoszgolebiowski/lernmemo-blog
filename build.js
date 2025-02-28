@@ -5,9 +5,8 @@ const ejs = require('ejs');
 const blogConfig = require('./config');
 
 // Configuration
-const BASE_URL = process.env.NODE_ENV === 'production' 
-  ? 'https://blog.lernmemo.com' 
-  : 'http://localhost:3000';
+const BASE_URL = 'https://blog.lernmemo.com' 
+
 const OUTPUT_DIR = path.join(__dirname, 'dist');
 
 async function build() {
