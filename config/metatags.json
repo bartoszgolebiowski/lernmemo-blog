@@ -9,15 +9,6 @@
     "ogType": "website"
   },
   "articles": {
-    "effective-homework-completion-using-ai": {
-      "title": "Effective Homework Completion Using AI | LernMemo Blog",
-      "description": "Learn how to use AI tools to complete language learning homework more efficiently and effectively. Boost your productivity with smart learning techniques.",
-      "keywords": "ai, language learning, homework, education tech, productivity, flashcards",
-      "ogImage": "/logo/lernmemo-og.png",
-      "twitterCard": "summary_large_image",
-      "canonicalUrl": "https://lernmemo.com/blog/article/effective-homework-completion-using-ai",
-      "ogType": "article"
-    },
     "convert-images-into-flaschard": {
       "title": "Convert Images into Flashcards for Language Learning | LernMemo Blog",
       "description": "Transform your language learning materials into interactive flashcards with Lernmemo's Image-to-Flashcard feature. Save time and study more efficiently.",
@@ -25,6 +16,15 @@
       "ogImage": "/logo/lernmemo-og.png",
       "twitterCard": "summary_large_image",
       "canonicalUrl": "https://lernmemo.com/blog/article/convert-images-into-flaschard",
+      "ogType": "article"
+    },
+    "effective-homework-completion-using-ai": {
+      "title": "Effective Homework Completion Using AI | LernMemo Blog",
+      "description": "Learn how to use AI tools to complete language learning homework more efficiently and effectively. Boost your productivity with smart learning techniques.",
+      "keywords": "ai, language learning, homework, education tech, productivity, flashcards",
+      "ogImage": "/logo/lernmemo-og.png",
+      "twitterCard": "summary_large_image",
+      "canonicalUrl": "https://lernmemo.com/blog/article/effective-homework-completion-using-ai",
       "ogType": "article"
     }
   }
