@@ -17,6 +17,15 @@
       "twitterCard": "summary_large_image",
       "canonicalUrl": "https://lernmemo.com/blog/article/effective-homework-completion-using-ai",
       "ogType": "article"
+    },
+    "convert-images-into-flaschard": {
+      "title": "Convert Images into Flashcards for Language Learning | LernMemo Blog",
+      "description": "Transform your language learning materials into interactive flashcards with Lernmemo's Image-to-Flashcard feature. Save time and study more efficiently.",
+      "keywords": "image to flashcard, language learning, flashcards, vocabulary acquisition, foreign language, AI, education tech",
+      "ogImage": "/logo/lernmemo-og.png",
+      "twitterCard": "summary_large_image",
+      "canonicalUrl": "https://lernmemo.com/blog/article/convert-images-into-flaschard",
+      "ogType": "article"
     }
   }
 }

@@ -49,8 +49,8 @@ async function createSitemap(articles) {
     // Generate sitemap content
     const sitemapContent = generateSitemapXml(baseUrl, articles);
     
-    // Write to file
-    const sitemapPath = path.join(__dirname, '..', 'public', 'sitemap.xml');
+    // Write to file in the dist directory
+    const sitemapPath = path.join(__dirname, 'dist', 'sitemap.xml');
     fs.writeFileSync(sitemapPath, sitemapContent, 'utf8');
     
     console.log(`Sitemap generated successfully at ${sitemapPath}`);
